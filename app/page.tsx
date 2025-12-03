@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SimpleTimeline from "@/components/ui/verticalTimeLine";
 import {
   ArrowLeft,
   ArrowLeftSquare,
@@ -33,7 +34,7 @@ export default function Home() {
   return (
     <div className="mx-56 mt-12 min-h-screen bg-zinc-50 font-sans dark:bg-black">
       {/* Hero section */}
-      <header className="flex flex-col sm:flex-row items-center gap-6">
+      <header className="flex gap-6">
         <div className="">
           <img
             src="IMG20250503173534.jpg"
@@ -43,7 +44,7 @@ export default function Home() {
         </div>
         <div className="pt-2">
           <span className="text-2xl font-bold ">Kian Fratz</span>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pt-1">
             <MapPin size={16} />
             Cebu City, Philippines
           </div>
@@ -118,16 +119,13 @@ export default function Home() {
           <div className="">
             {/* About heading */}
             <div className="flex items-center gap-2 mb-4">
-              <FlaskConical size={16} />
+              <BriefcaseBusiness size={16} />
               <span className="text-xl font-bold">Experience</span>
             </div>
 
-            <div className="text-gray-300 leading-relaxed">
-              I'm Kian Fratz, an aspiring software engineer with a passion for
-              technology and innovation. Currently pursuing a degree in
-              Information Technology at the University of Cebu Lapu-Lapu and
-              Mandaue, I am eager to apply my skills to real-world challenges
-              and contribute to meaningful projects.
+            {/* Vertical Timeline experience */}
+            <div className="pt-2">
+              <SimpleTimeline />
             </div>
           </div>
         </div>
