@@ -2,14 +2,10 @@ import { Button } from "@/components/ui/button";
 import SimpleTimeline from "@/components/ui/verticalTimeLine";
 import {
   ArrowLeft,
-  ArrowLeftSquare,
   BriefcaseBusiness,
   ChartColumnStacked,
-  ChevronRight,
-  FlaskConical,
-  Map,
+  FileCodeCorner,
   MapPin,
-  SunsetIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -30,9 +26,43 @@ const backendStack = [
   "MongoDB",
 ];
 
+interface Project {
+  name: string;
+  description?: string;
+  link: string;
+}
+
+const projects: Project[] = [
+  {
+    name: "Lift Logger",
+    description: "Exercise logger.",
+    link: "https://github.com/KianFratz/lift-logger-v2",
+  },
+  {
+    name: "Fitness Application",
+    description: "AI-powered workout tracker.",
+    link: "https://github.com/KianFratz/fitness",
+  },
+  {
+    name: "EventPro UI/UX Design",
+    description: "Made the UI/UX for our website capstone project.",
+    link: "#",
+  },
+  {
+    name: "Pastry Haven",
+    description: "Pastry shop.",
+    link: "https://github.com/KianFratz/pastry-haven",
+  },
+  {
+    name: "Water Truck Management System",
+    description: "Water management system.",
+    link: "https://github.com/KianFratz/WaterTruckManagementSystem",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="mx-56 mt-12 min-h-screen bg-zinc-50 font-sans dark:bg-black">
+    <div className="mx-56 mt-12 mb-12 min-h-screen bg-zinc-50 font-sans dark:bg-black">
       {/* Hero section */}
       <header className="flex gap-6">
         <div className="">
@@ -130,6 +160,28 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Projects */}
+      <div className="p-4 w-full border rounded-lg border-gray-700 bg-zinc-900 mt-2">
+        <div className="flex items-center gap-2 mb-4">
+          <FileCodeCorner size={16} />
+          <h1 className="font-bold text-xl">Recent Projects</h1>
+        </div>
+        {projects.map((project) => (
+          <div className="grid grid-cols-1 gap-2 mb-2 " key={project.name}>
+            <div className="border border-gray-700 rounded-lg flex gap-2">
+              <h1>{project.name}</h1>
+              <span>{project.description}</span>
+              <Link
+                href={project.link}
+                className=" bg-black text-white rounded-lg"
+              >
+                View Project
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
