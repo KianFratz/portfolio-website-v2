@@ -6,7 +6,7 @@ const timelineData = [
   {
     year: "Current",
     title: "BS Information Technology",
-    subtitle: "University of San Carlos",
+    subtitle: "University of Cebu",
   },
   {
     year: "2022",

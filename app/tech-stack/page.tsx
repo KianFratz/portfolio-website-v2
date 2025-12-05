@@ -32,7 +32,6 @@ const backendStack = [
   "MongoDB",
   "JWT",
   "REST APIs",
-
 ];
 
 const developerTools = [
@@ -44,24 +43,19 @@ const developerTools = [
   "Discord",
   "Docker",
   "Postman",
-  "Cursor"
+  "Cursor",
 ];
 
-const llms = [
-  "Claude",
-  "ChatGPT",
-  "Gemini",
-  "DeepSeek",
-];
+const llms = ["Claude", "ChatGPT", "Gemini", "DeepSeek"];
 
 function TechStack() {
   return (
     <div className="h-full font-sans items-center min-h-screen bg-zinc-50 dark:bg-black mx-56 px-4 py-8">
       <div className="">
-        <div className="items-center pt-4">
+        <div className="items-center pt-4 ">
           <Link href="/" className="flex items-center">
             <ArrowLeft size={16} />
-            <span className="pl-2">Back to Home</span>
+            <span className="pl-2 ">Back to Home</span>
           </Link>
         </div>
 
@@ -101,7 +95,6 @@ function TechStack() {
           </div>
         </div>
 
-
         {/* developer tools */}
         <div className="pt-8">
           <span className="text-2xl font-bold">Developer Tools</span>
@@ -119,7 +112,9 @@ function TechStack() {
 
         {/* ai tools */}
         <div className="pt-8">
-          <span className="text-2xl font-bold">AI (Artificial Intelligence)</span>
+          <span className="text-2xl font-bold">
+            AI (Artificial Intelligence)
+          </span>
           <div className="flex flex-wrap gap-2 mt-4">
             {llms.map((tech) => (
               <div
@@ -132,6 +127,13 @@ function TechStack() {
           </div>
         </div>
       </div>
+      {/* footer */}
+      <footer className="mt-20">
+        <hr className="border-gray-700" />
+        <div className="text-center pt-8">
+          <p>&copy; 2025 Kian Fratz. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   );
 }
