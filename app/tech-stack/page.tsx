@@ -55,7 +55,7 @@ function TechStack() {
         <div className="items-center pt-4 ">
           <Link href="/" className="flex items-center">
             <ArrowLeft size={16} />
-            <span className="pl-2 ">Back to Home</span>
+            <span className="pl-2 hover:underline">Back to Home</span>
           </Link>
         </div>
 

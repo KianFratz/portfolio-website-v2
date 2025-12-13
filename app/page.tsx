@@ -72,30 +72,32 @@ const projects: Project[] = [
 
 export default function Home() {
   return (
-    <div className="mx-56 mt-12 mb-12 min-h-screen bg-zinc-50 font-sans dark:bg-black">
+    <div className="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-56 mt-8 sm:mt-12 mb-12 min-h-screen bg-zinc-50 font-sans dark:bg-black">
       {/* Hero section */}
-      <header className="flex gap-6 items-center">
-        <div className="">
+      <header className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start">
+        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-46 md:h-46">
           <img
             src="IMG20250503173534.jpg"
             alt="Kian Fratz"
-            className="w-46 h-46 rounded-lg object-cover shrink"
+            className="w-full h-full rounded-lg object-cover"
           />
         </div>
-        <div className="pt-2">
-          <span className="text-2xl font-bold ">Kian Fratz</span>
-          <div className="flex items-center gap-2 pt-1">
+        <div className="pt-4 sm:pt-2 text-center sm:text-left">
+          <h1 className="text-xl sm:text-2xl font-bold">Kian Fratz</h1>
+          <div className="flex items-center justify-center sm:justify-start gap-2 pt-1">
             <MapPin size={16} />
             Cebu City, Philippines
           </div>
-          <div className="pt-4 text-lg">Aspiring Software Engineer</div>
+          <div className="pt-4 text-base sm:text-lg">
+            Aspiring Software Engineer
+          </div>
         </div>
       </header>
 
-      <main className="grid grid-cols-2 gap-2">
+      <main className="grid grid-cols-1 lg:grid-cols-2 gap-2 sm:gap-4">
         {/* About section */}
-        <div className="flex">
-          <div className="mt-10 p-4 w-full border rounded-lg border-gray-700 bg-zinc-900">
+        <div className="lg:flex">
+          <div className="mt-6 sm:mt-10 p-4 w-full border rounded-lg border-gray-700 bg-zinc-900">
             <div className="flex items-center gap-2 mb-4">
               <BriefcaseBusiness size={16} />
               <span className="text-xl font-bold">About</span>
@@ -120,7 +122,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="p-4 min-h-1/2 border rounded-lg border-gray-700 bg-zinc-900 mt-10">
+        <div className="p-4 min-h-1/2 border rounded-lg border-gray-700 bg-zinc-900 sm:mt-10">
           {/* Experience */}
           <div>
             <div className="">
@@ -139,9 +141,9 @@ export default function Home() {
         </div>
       </main>
 
-      <div className="flex gap-2">
+      <div className="flex flex-col lg:flex-row gap-2 sm:gap-4">
         {/* Tech stack */}
-        <div className="flex-2 mt-2 p-4 border rounded-lg border-gray-700 bg-zinc-900">
+        <div className="lg:flex-2 mt-4 sm:mt-4 p-4 border rounded-lg border-gray-700 bg-zinc-900">
           <div className="text-gray-300 leading-relaxed">
             {/* frontend */}
             <div className="flex items-center gap-2 mb-2">
@@ -149,9 +151,10 @@ export default function Home() {
               <span className="font-bold text-xl">Tech Stack</span>
 
               <Link href={"/tech-stack"} className="ml-auto">
-                <Button className="cursor-pointer hover:text-black hover:bg-white ">
+                <Button className="cursor-pointer hover:text-black hover:bg-white text-sm sm:text-base">
                   <ArrowLeft />
-                  <span>View All</span>
+                  <span className="hidden sm:inline">View All</span>
+                  <span className="sm:hidden">All</span>
                 </Button>
               </Link>
             </div>
@@ -160,7 +163,7 @@ export default function Home() {
               {frontendStack.map((tech) => (
                 <div
                   key={tech}
-                  className="flex items-center border border-gray-700 rounded-lg pl-2 pr-2 mb-2 text-white"
+                  className="flex items-center border border-gray-700 rounded-lg px-2 py-1 text-sm sm:text-base mb-2 text-white"
                 >
                   {tech}
                 </div>
@@ -183,8 +186,8 @@ export default function Home() {
         </div>
 
         {/* Beyond coding */}
-        <div className="mt-2 flex-1">
-          <div className="py-2 px-4 overflow-auto h-full border rounded-lg border-gray-700 bg-zinc-900">
+        <div className="mt-4 sm:mt-4 lg:flex-1">
+          <div className="p-4 h-full border rounded-lg border-gray-700 bg-zinc-900">
             <div className="flex items-center gap-2 mb-4">
               <BookOpen size={16} />
               <span className="text-xl font-bold ">Beyond Coding</span>
@@ -201,12 +204,12 @@ export default function Home() {
       </div>
 
       {/* Projects */}
-      <div className="p-4 w-full border rounded-lg border-gray-700 bg-zinc-900 mt-2">
+      <div className="p-4 w-full border rounded-lg border-gray-700 bg-zinc-900 sm:mt-4">
         <div className="flex items-center gap-2 mb-4">
           <FileCodeCorner size={16} />
           <h1 className="font-bold text-xl">Recent Projects</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project) => (
             <div key={project.name}>
               <div className="border border-gray-700 rounded-lg flex gap-2 p-4">
@@ -230,9 +233,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-4">
         {/* Socials */}
-        <div className="p-4 border rounded-lg border-gray-700 bg-zinc-900 mt-2">
+        <div className="p-4 border rounded-lg border-gray-700 bg-zinc-900 mt-4 sm:mt-4">
           <div className="flex items-center gap-2 mb-2">
             <LinkIcon size={16} />
             <h1 className="font-bold text-xl">Socials</h1>
@@ -244,7 +247,7 @@ export default function Home() {
                   href={
                     "https://www.linkedin.com/in/kian-fratz-pagobo-a04a7427b/"
                   }
-                  className="border border-gray-700 flex gap-2 px-3 py-3 rounded-xl text-white text-sm hover:scale-105 transition-transform duration-200"
+                  className="border border-gray-700 flex gap-2 px-3 py-2 sm:py-3 rounded-xl text-white text-sm hover:scale-105 transition-transform duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -280,7 +283,7 @@ export default function Home() {
         </div>
 
         {/* Get in touch */}
-        <div className="p-4 border rounded-lg border-gray-700 bg-zinc-900 mt-2">
+        <div className="p-4 border rounded-lg border-gray-700 bg-zinc-900 mt-4 sm:mt-4">
           <div className="flex items-center gap-2 mb-2">
             <Phone size={16} />
             <h1 className="font-bold text-xl">Get in touch</h1>
